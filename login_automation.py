@@ -2,22 +2,9 @@ import requests
 import re
 
 def has_valid_credentials(instance):
-    """
-    Verifica si una instancia de DVWA (Damn Vulnerable Web Application) tiene configuradas las credenciales por defecto.
 
-    Args:
-        instance (dict): Un diccionario que contiene la IP, el puerto y si el protocolo SSL está habilitado en la forma:
-                         {'ip_str': '127.0.0.1', 'port': 80, 'ssl': True o False}
 
-    Returns:
-        bool: True si las credenciales por defecto son aceptadas, False en caso contrario.
 
-    Raises:
-        requests.exceptions.ConnectionError: Si no se puede establecer una conexión con la instancia DVWA.
-        Exception: Si hay problemas al extraer el token CSRF de la página de login.
-    """
-
-    # Inicializa la sesión HTTP
     sess = requests.Session()
     proto = 'https' if 'ssl' in instance else 'http'
     login_page = f"{proto}://{instance['ip_str']}:{instance['port']}/login.php"

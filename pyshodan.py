@@ -4,10 +4,7 @@ from shodansearch import ShodanSearch
 from login_automation import has_valid_credentials
 
 def main():
-    """
-    Función principal que carga la configuración del entorno, inicializa una búsqueda en Shodan
-    y muestra los resultados de la búsqueda.
-    """
+   
     # Carga variables de entorno desde un archivo .env
     load_dotenv()
 
